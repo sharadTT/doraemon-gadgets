@@ -1,0 +1,45 @@
+#blob {
+    height: 50vh;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right,
+            #e8eaea,
+            #51a1c4);
+    animation: rotateMouse 20s infinite;
+}
+
+@keyframes rotateMouse {
+    from {
+        rotate: 0deg;
+    }
+
+    50% {
+        scale: 1 1.5;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+#blur {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    backdrop-filter: blur(150px);
+}
+
+@media screen and (max-width: 600px) {
+    #blob {
+        display: none;
+    }
+
+    #blur {
+        display: none;
+    }
+}

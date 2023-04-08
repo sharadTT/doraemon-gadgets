@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    Doraemon's Gadgets
+  </title>
+  <style>
+    body {
+      background-color: black;
+      height: 100vh;
+      margin: 0rem;
+      overflow: hidden;
+    }
+
+    #blob {
+      height: 500px;
+      aspect-ratio: 1;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      translate: -50% -50%;
+      border-radius: 50%;
+      background: linear-gradient(to right,
+          #e8eaea,
+          #51a1c4);
+      animation: rotateMouse 20s infinite;
+    }
+
+    @keyframes rotateMouse {
+      from {
+        rotate: 0deg;
+      }
+
+      50% {
+        scale: 1 1.5;
+      }
+
+      to {
+        rotate: 360deg;
+      }
+    }
+
+    #blur {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 2;
+      backdrop-filter: blur(150px);
+    }
+  </style>
+
+
+
+</head>
+
+<body bgcolor="black">
+  <div id="blob"></div>
+  <div id="blur"></div>
+
+  <script>
+    const blob = document.getElementById("blob");
+
+    document.body.onpointermove = event => {
+      const { clientX, clientY } = event;
+
+      blob.animate({
+        left: `${clientX}px`,
+        top: `${clientY}px`
+      }, { duration: 3000, fill: "forwards" });
+    }
+  </script>
+</body>
+
+</html>
