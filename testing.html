@@ -20,15 +20,17 @@
 
   <script>
     const container = document.querySelector('.container')
-    const URL = 'https://raw.githubusercontent.com/sharadTT/sharadTT.github.io/main/images/fav-icon.png'
+    const imageURL = 'https://raw.githubusercontent.com/sharadTT/doraemon-gadgets/main/images/gadget-images/'
+    let imageNumber = 1
 
     function loadImages(numImages = 10) {
       let i = 0;
       while(i < numImages){
         const img = document.createElement('img')
-        img.src = `https://raw.githubusercontent.com/sharadTT/sharadTT.github.io/main/images/${i}.png`
+        img.src = `${imageURL}1.png`
         container.appendChild(img)
         i++
+        imageNumber++
       }
     }
 
