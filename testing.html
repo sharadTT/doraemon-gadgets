@@ -7,70 +7,39 @@
   <title>
     Doraemon's Gadgets
   </title>
-  <style>
-    body {
-      background-color: black;
-      height: 100vh;
-      margin: 0rem;
-      overflow: hidden;
-    }
-
-    #blob {
-      height: 500px;
-      aspect-ratio: 1;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      translate: -50% -50%;
-      border-radius: 50%;
-      background: linear-gradient(to right,
-          #e8eaea,
-          #51a1c4);
-      animation: rotateMouse 20s infinite;
-    }
-
-    @keyframes rotateMouse {
-      from {
-        rotate: 0deg;
-      }
-
-      50% {
-        scale: 1 1.5;
-      }
-
-      to {
-        rotate: 360deg;
-      }
-    }
-
-    #blur {
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      z-index: 2;
-      backdrop-filter: blur(150px);
-    }
-  </style>
+ <style>
+ </style>
 
 
 
 </head>
 
 <body bgcolor="black">
-  <div id="blob"></div>
-  <div id="blur"></div>
+  <div class="container">
+  </div>
 
   <script>
-    const blob = document.getElementById("blob");
+    const container = document.querySelector('.container')
+    const URL = 'https://raw.githubusercontent.com/sharadTT/sharadTT.github.io/main/images/fav-icon.png'
 
-    document.body.onpointermove = event => {
-      const { clientX, clientY } = event;
-
-      blob.animate({
-        left: `${clientX}px`,
-        top: `${clientY}px`
-      }, { duration: 3000, fill: "forwards" });
+    function loadImages(numImages = 10) {
+      let i = 0;
+      while(i < numImages){
+        const img = document.createElement('img')
+        img.src = `https://raw.githubusercontent.com/sharadTT/sharadTT.github.io/main/images/${i}.png`
+        container.appendChild(img)
+        i++
+      }
     }
+
+    loadImages()
+
+
+    window.addEventListener('scroll', () =>  {
+      if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
+        loadImages()
+      }
+    })
   </script>
 </body>
 
