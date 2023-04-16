@@ -7,39 +7,78 @@
   <title>
     Doraemon's Gadgets
   </title>
- <style>
- </style>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/body.css">
+  <link rel="stylesheet" href="styles/mouse-blob.css">
+  <link rel="stylesheet" href="styles/gadgetsContainer.css">
+  <link rel="stylesheet" href="styles/gadgetCard.css">
 
 
 </head>
 
-<body bgcolor="black">
-  <div class="container">
+<body class="scrollable">
+  <div class="gadgetsContainer">
   </div>
 
-  <script>
-    const container = document.querySelector('.container')
-    const imageURL = 'https://raw.githubusercontent.com/sharadTT/doraemon-gadgets/main/images/gadget-images/'
-    let imageNumber = 1
 
-    function loadImages(numImages = 10) {
+  <script>
+    const container = document.querySelector('.gadgetsContainer')
+    const gadgetName = document.querySelector('.gadgetName')
+    const imageURL = 'https://raw.githubusercontent.com/sharadTT/doraemon-gadgets/main/images/gadget-images/'
+    const gadgetNameURL = 'https://raw.githubusercontent.com/sharadTT/doraemon-gadgets/main/files/'
+    let gadgetNumber = 1
+
+    function loadGadgets(numImages = 10) {
       let i = 0;
-      while(i < numImages){
+      while (i < numImages) {
         const img = document.createElement('img')
-        img.src = `${imageURL}1.png`
-        container.appendChild(img)
+        img.src = `${imageURL}${gadgetNumber}.png`
+
+        const fileName = `${gadgetNameURL}${gadgetNumber}.txt`
+        fetch(fileName)
+          .then(response => response.text())
+          .then(data => {
+            const textNode = document.createTextNode(data)
+            const textElement = document.createElement('p') // create a new <p> element
+            textElement.appendChild(textNode) // append the text node to the <p> element
+            container.appendChild(img)
+            container.appendChild(textElement) // append the <p> element to the container
+
+            img.style.height = "10em"
+            img.style.width = "10em"
+            img.style.margin = "0"
+
+            // apply CSS styles to the <p> elements
+            textElement.style.fontSize = '16px'
+            textElement.style.color = 'white'
+            textElement.style.display = "inline"
+
+            //Style container
+            container.style.display = "flex"
+            container.style.flexDirection = "column"
+            container.style.color = "white"
+            container.style.zIndex = -1
+            container.style.textAlign = "center"
+            container.style.alignItems = "center"
+
+          })
+          .catch(error => console.error(error));
+
         i++
-        imageNumber++
+        // gadgetNumber++
       }
     }
 
-    loadImages()
+    loadGadgets()
 
 
-    window.addEventListener('scroll', () =>  {
-      if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
-        loadImages()
+    window.addEventListener('scroll', () => {
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
+        loadGadgets()
       }
     })
   </script>

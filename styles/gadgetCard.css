@@ -1,35 +1,35 @@
-#gadget-card {
+#gadgetCard {
     z-index: -1;
     text-align: center;
     width: 20%;
     margin: 1rem;
 }
 
-#gadget-card:hover {
+#gadgetCard:hover {
     cursor: pointer;
     /* transform: translate(0px, -8px);
     transition: 0.8s all ease; */
 }
 
-#gadget-image:hover {
+#gadgetImage:hover {
     cursor: pointer;
     transform: translate(0px, -8px);
     transition: 0.8s all ease;
 }
 
-#gadget-image {
+#gadgetImage {
     aspect-ratio: 1;
     height: 10em;
     margin: 0;
 }
 
-#gadget-name {
+#gadgetName {
     color: white;
     align-content: center;
     margin: 0;
 }
 
-#gadget-description {
+#gadgetDescription {
     width: 100%;
     color: white;
 }
