@@ -3,13 +3,84 @@ const imageURL = 'https://raw.githubusercontent.com/sharadTT/doraemon-gadgets/ma
 const gadgetNameURL = 'https://raw.githubusercontent.com/sharadTT/doraemon-gadgets/main/files/'
 let gadgetNumber = 1
 
-function loadGadgets(numImages = 10) {
+function loadGadgetInfo(index) {
+
+    var overlay = document.getElementById('overlay');
+    overlay.style.display = 'block';
+    overlay.style.zIndex = 5;
+    
+
+    console.log(`Image ${index} clicked`)
+    const preview = document.createElement('div')
+    preview.classList.add('gadgetPreview')
+
+    //Get Gadget Image
+    const img = document.createElement('img')
+    img.src = `${imageURL}${index}.png`
+
+    //Get Gadget Name
+    const fileName = `${gadgetNameURL}${index}.txt`
+    fetch(fileName)
+        .then(response => response.text())
+        .then(data => {
+            const textNode = document.createTextNode(data)
+            const textElement = document.createElement('p') // create a new <p> element
+            textElement.appendChild(textNode) // append the text node to the <p> element
+            preview.appendChild(textElement) // append the <p> element to the container
+
+            // apply CSS styles to the <p> elements
+            textElement.style.fontSize = '1.2rem'
+            textElement.style.color = 'black'
+            textElement.style.display = "inherit"
+
+        })
+        .catch(error => console.error(error));
+
+
+    //Get Gadget Info
+    const fileInfo = `${gadgetNameURL}${index}-info.txt`
+    fetch(fileInfo)
+        .then(response => response.text())
+        .then(data => {
+            const textNode = document.createTextNode(data)
+            const textElement = document.createElement('p') // create a new <p> element
+            textElement.appendChild(textNode) // append the text node to the <p> element
+            preview.appendChild(textElement) // append the <p> element to the container
+
+            // apply CSS styles to the <p> elements
+            textElement.style.fontSize = '1.2rem'
+            textElement.style.color = 'black'
+            textElement.style.display = "inherit"
+
+        })
+        .catch(error => console.error(error));
+
+        preview.appendChild(img)
+        img.style.height = "15em"
+        img.style.width = "15em"
+        img.style.margin = "0"
+
+
+        container.appendChild(preview)
+}
+
+function loadGadgets(numImages = 20) {
     let i = 0;
     while (i < numImages) {
         const card = document.createElement('div')
         card.classList.add('gadgetCard')
         const img = document.createElement('img')
         img.src = `${imageURL}${gadgetNumber}.png`
+
+        // Create a closure using an IIFE to capture the current value of i
+        const onClickHandler = (function (index) {
+            return function () {
+                loadGadgetInfo(index + 1)
+            }
+        })(i)
+
+        // Add click event listener to the img element
+        img.addEventListener('click', onClickHandler)
 
         const fileName = `${gadgetNameURL}${gadgetNumber}.txt`
         fetch(fileName)
@@ -27,7 +98,7 @@ function loadGadgets(numImages = 10) {
 
                 // apply CSS styles to the <p> elements
                 textElement.style.fontSize = '1.2rem'
-                textElement.style.color = 'white'
+                textElement.style.color = 'black'
                 textElement.style.display = "inline"
 
                 container.appendChild(card)
@@ -49,8 +120,6 @@ window.addEventListener('scroll', () => {
     }
 })
 
-
-
 //Button to scroll to top
 function scrollToTop() {
     window.scrollTo({
@@ -58,3 +127,14 @@ function scrollToTop() {
         behavior: 'smooth'
     });
 }
+
+window.addEventListener('scroll', () => {
+    // console.log(scrollY)
+    scrollButton = document.querySelector(".topScrollButton");
+    if (window.scrollY >= 200) {
+        scrollButton.style.display = "flex";
+    }
+    else {
+        scrollButton.style.display = "none";
+    }
+})
