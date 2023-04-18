@@ -1,2 +1,1 @@
 Anywhere Door
-The Anywhere Door opens a portal to the user's demand, regardless if said or not.
