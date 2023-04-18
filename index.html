@@ -4,33 +4,36 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/x-icon" href="/images/doraemon-icon.png">
   <title>
     Doraemon's Gadgets
   </title>
 
-  <link rel="stylesheet" href="styles/body.css">
-  <link rel="stylesheet" href="styles/mouse-blob.css">
-  <link rel="stylesheet" href="styles/gadgets-container.css">
-  <link rel="stylesheet" href="styles/gadget-card.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
 
-
-
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-  <div id="blob"></div>
-  <div id="blur"></div>
+<body class="scrollable">
 
-
-  <div id="gadgets-container">
-    <div id="gadget-card">
-      <img src="images/gadget-images/1.png" id="gadget-image">
-      <p id="gadget-name">Anywhere Door</p>
-      <p id="gadget-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam voluptates quo dolores dolor quas, ipsam nemo minima aut nihil similique.</p>
-    </div>
+  <div class="inputBoxes">
+    <form action="" class="searchBar">
+      <input type="text" placeholder="Search your gadget">
+      <button type="submit"><img src="images/search.png"></button>
+    </form>
   </div>
-  <script src="scripts/mouseBlob.js"></script>
+  <button class="topScrollButton" onclick="scrollToTop()">
+    <img src="images/ScrollToTop.png" alt="Top"></button>
+
+  <div class="gadgetDetailPane">
+    Box
+  </div>
+  <div class="gadgetsContainer">
+  </div>
+
+  <script src="script.js"></script>
+
 </body>
 
 </html>

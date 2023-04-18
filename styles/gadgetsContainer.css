@@ -1,8 +1,0 @@
-#gadgetsContainer {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    position: absolute;
-    z-index: 3;
-    color: white;
-}
