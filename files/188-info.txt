@@ -1,0 +1,1 @@
+The person with the highest ranked badge must be obeyed by the people who wear lower ranked badges than this person. The badges can only be removed by the person who appointed them.

@@ -1,1 +1,1 @@
-nan
+This gadget allows the user to experience work. By stabbing the attached pin into the place where he wants to work, he will be able to work in that place. However, once a pin is stabbed, it cannot be undone, and if the user works in that place and does not get a pass, he cannot stop it.

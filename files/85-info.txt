@@ -1,1 +1,1 @@
-nan
+It can teleport from one body of water to another. Grows or shrinks in size depending on the spaciousness of the water body. It's in its normal size when it's on land.

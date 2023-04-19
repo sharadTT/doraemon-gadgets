@@ -1,0 +1,1 @@
+The bomb has a timer that must be activated before it can detonate. If anything was caught in its area of effect, the bomb stupefies its targets, causing them to hallucinate and behave erratically.

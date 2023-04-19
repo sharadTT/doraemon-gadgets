@@ -1,1 +1,1 @@
-a gadget that allows the user to draw objects and bring them to life from any point in time.
+Space Capsule is a gadget that can transport its user to any location in the universe.

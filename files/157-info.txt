@@ -1,0 +1,1 @@
+When consumed, any events said by the user will forcibly occur in the other way around.

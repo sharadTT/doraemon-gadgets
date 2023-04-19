@@ -1,1 +1,1 @@
-nan
+This is what you would use when for some reason you can’t use the Time Machine. It can make you move back and forth in time, but you cannot specify a location.

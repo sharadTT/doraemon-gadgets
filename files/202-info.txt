@@ -1,0 +1,1 @@
+The stickers allow their user to substitute an item for another by writing that object's name on the sticker, and applying the sticker to an item that they want to "substitute". The item's use is not limited to just objects, and can also be used on buildings, or even people. If the sticker falls off the effect will end.

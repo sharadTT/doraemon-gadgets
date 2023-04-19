@@ -1,1 +1,1 @@
-nan
+The Dress Up Camera is able to override the person's attire with whatever image inserted inside it, seemingly destroying the ammunition in the process.

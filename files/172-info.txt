@@ -1,0 +1,1 @@
+The gadget allows the user to pull a person out from a photograph. The user has to push the button on the stick to return the person back inside the photograph.

@@ -1,0 +1,1 @@
+Place an object on the board and this machine will send it to the place displayed on the monitor.

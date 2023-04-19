@@ -1,1 +1,1 @@
-nan
+Its function is the same as the Time Machine except that it can't change the user's location.

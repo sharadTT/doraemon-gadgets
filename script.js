@@ -3,7 +3,7 @@ const previewContainer = document.querySelector('.previewContainer')
 const imageURL = 'https://raw.githubusercontent.com/sharadTT/doraemon-gadgets/main/images/gadget-images/'
 const gadgetNameURL = 'https://raw.githubusercontent.com/sharadTT/doraemon-gadgets/main/files/'
 let gadgetNumber = 1
-let maxGadgetNumber = 100
+let maxGadgetNumber = 80
 
 function loadGadgetInfo(index) {
 
@@ -92,9 +92,9 @@ function loadGadgets(numImages = 20) {
         // Create a closure using an IIFE to capture the current value of i
         const onClickHandler = (function(gadgetNumber) {
             return function () {
-                loadGadgetInfo(gadgetNumber+1)
+                loadGadgetInfo(gadgetNumber)
             }
-        })(i)
+        })(gadgetNumber)
 
         // Add click event listener to the img element
         img.addEventListener('click', onClickHandler)

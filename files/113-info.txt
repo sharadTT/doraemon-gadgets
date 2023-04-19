@@ -1,0 +1,1 @@
+Spin this, and it will mix up the rooms and hallways in the house, making the house into a maze.

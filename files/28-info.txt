@@ -1,1 +1,1 @@
-Time Stopwatch is a gadget that allows the user to manipulate time by pausing, rewinding, or fast-forwarding it within a limited range.
+When the user raises the rod, the rain will stop.

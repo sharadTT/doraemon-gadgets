@@ -1,0 +1,1 @@
+Similar to a camera, it has a shutter, when the user presses the shutter, the targeted object/person will freeze. But when the user presses the shutter again, the object will resume its original motion again.

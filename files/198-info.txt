@@ -1,0 +1,1 @@
+This dice will make you rewind time equal to the number you roll. You can optionally restore the changes you have made in the past back to the way it is.
