@@ -3,6 +3,7 @@ const previewContainer = document.querySelector('.previewContainer')
 const imageURL = 'https://raw.githubusercontent.com/sharadTT/doraemon-gadgets/main/images/gadget-images/'
 const gadgetNameURL = 'https://raw.githubusercontent.com/sharadTT/doraemon-gadgets/main/files/'
 let gadgetNumber = 1
+let maxGadgetNumber = 100
 
 function loadGadgetInfo(index) {
 
@@ -122,7 +123,7 @@ function loadGadgets(numImages = 20) {
             .catch(error => console.error(error));
 
         i++
-        // gadgetNumber++
+        gadgetNumber++
     }
 }
 
@@ -130,9 +131,11 @@ loadGadgets()
 
 
 window.addEventListener('scroll', () => {
+    if (gadgetNumber < maxGadgetNumber) {
     if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
         loadGadgets()
     }
+}
 })
 
 //Button to scroll to top
