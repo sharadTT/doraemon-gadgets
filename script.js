@@ -8,7 +8,7 @@ function loadGadgetInfo(index) {
     var overlay = document.getElementById('overlay');
     overlay.style.display = 'block';
     overlay.style.zIndex = 5;
-    
+
 
     console.log(`Image ${index} clicked`)
     const preview = document.createElement('div')
@@ -55,13 +55,25 @@ function loadGadgetInfo(index) {
         })
         .catch(error => console.error(error));
 
-        preview.appendChild(img)
-        img.style.height = "15em"
-        img.style.width = "15em"
-        img.style.margin = "0"
+    preview.appendChild(img)
+    img.style.height = "15em"
+    img.style.width = "15em"
+    img.style.margin = "0"
 
+    //Add button to close
+    const close = document.createElement('button')    
+    var closeImage = document.createElement('img');
+    closeImage.src = 'images/close.png'
+    closeImage.style.height = "2em"
+    close.appendChild(closeImage);
 
-        container.appendChild(preview)
+    close.addEventListener('click', function () {
+        overlay.style.display = 'none'
+        preview.style.display = 'none'
+    });
+
+    preview.appendChild(close)
+    container.appendChild(preview)
 }
 
 function loadGadgets(numImages = 20) {

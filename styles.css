@@ -111,11 +111,26 @@ body {
 
 .gadgetPreview {
     z-index: 10;
-    background-color: gray;
+    background-color: rgb(255,255,255,1);
     position: fixed;
     border-radius: 20px;
     align-items: center;
     text-align: center;
+}
+
+.gadgetPreview p{
+    z-index: 10;
+    margin: 2em;
+}
+
+.gadgetPreview button {
+    position : absolute;
+    top : 0.5em;
+    right : 0.5em;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    background: transparent;
 }
 
 #overlay {
