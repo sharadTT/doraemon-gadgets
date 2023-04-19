@@ -1,0 +1,1 @@
+Horse Racetrack is a gadget that creates a miniature racecourse, allowing users to race and bet on their own horses.

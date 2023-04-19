@@ -1,0 +1,1 @@
+a gadget that allows the user to freeze time and move around freely while everything else is paused.

@@ -1,0 +1,1 @@
+Weather Box is a gadget that can control the weather, allowing the user to create rain, snow, sunshine, and other weather conditions on demand.

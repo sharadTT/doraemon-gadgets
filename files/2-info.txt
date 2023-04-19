@@ -1,1 +1,1 @@
-Bamboo Copter is used it fly from one place to another by just thinking of the direction one wants to move in.
+A small helicopter-like device that allows the user to fly and travel quickly.
