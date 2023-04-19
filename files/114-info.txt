@@ -1,1 +1,1 @@
-Sooner-or-Later Eyeballs is a gadget. Set the dial to a certain time in the future, put them in your eyes, and you will be able to see what will happen at that point in the future.
+Similar to a camera, it has a shutter, when the user presses the shutter, the targeted object/person will freeze. But when the user presses the shutter again, the object will resume its original motion again.

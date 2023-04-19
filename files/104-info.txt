@@ -1,1 +1,1 @@
-It is a turret gadget that is about the size of a room, its user sets it somewhere, points it at someone and signal "Fire!", and anyone can shoot at will.
+It is used to create a pitfall, which is basically something like a hole in the ground used for hiding.

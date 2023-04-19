@@ -1,1 +1,1 @@
-When this gadget is placed on any thing, one will be able to control the thing.
+If you place this gadget on the ground, it will automatically search for all holes on Earth and connect itself to one of them.
