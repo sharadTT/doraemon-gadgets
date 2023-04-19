@@ -1,1 +1,1 @@
-Time Stopwatch is a gadget that allows the user to manipulate time by pausing, rewinding, or fast-forwarding it within a limited range.
+a gadget that can create a duplicate of any item that is placed on it, by toasting it with a special beam.

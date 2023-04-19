@@ -90,9 +90,9 @@ function loadGadgets(numImages = 20) {
         img.src = `${imageURL}${gadgetNumber}.png`
 
         // Create a closure using an IIFE to capture the current value of i
-        const onClickHandler = (function (index) {
+        const onClickHandler = (function(gadgetNumber) {
             return function () {
-                loadGadgetInfo(index + 1)
+                loadGadgetInfo(gadgetNumber+1)
             }
         })(i)
 
@@ -112,6 +112,7 @@ function loadGadgets(numImages = 20) {
                 img.style.height = "10em"
                 img.style.width = "10em"
                 img.style.margin = "0"
+                img.style.marginTop = "2em"
 
                 // apply CSS styles to the <p> elements
                 textElement.style.fontSize = '1.2rem'
