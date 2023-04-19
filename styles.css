@@ -35,8 +35,8 @@ textarea {
 }
 
 .searchBar button img {
-    width: 2rem;
-    height: 2rem;
+    /* width: 2rem; */
+    height: 3.5rem;
 }
 
 .searchBar button {
