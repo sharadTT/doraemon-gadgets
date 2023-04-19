@@ -1,4 +1,5 @@
 const container = document.querySelector('.gadgetsContainer')
+const previewContainer = document.querySelector('.previewContainer')
 const imageURL = 'https://raw.githubusercontent.com/sharadTT/doraemon-gadgets/main/images/gadget-images/'
 const gadgetNameURL = 'https://raw.githubusercontent.com/sharadTT/doraemon-gadgets/main/files/'
 let gadgetNumber = 1
@@ -8,7 +9,8 @@ function loadGadgetInfo(index) {
     var overlay = document.getElementById('overlay');
     overlay.style.display = 'block';
     overlay.style.zIndex = 5;
-
+    container.style.pointerEvents = 'none'
+    previewContainer.style.display = 'flex'
 
     console.log(`Image ${index} clicked`)
     const preview = document.createElement('div')
@@ -70,10 +72,11 @@ function loadGadgetInfo(index) {
     close.addEventListener('click', function () {
         overlay.style.display = 'none'
         preview.style.display = 'none'
+        container.style.pointerEvents = 'auto'
     });
 
     preview.appendChild(close)
-    container.appendChild(preview)
+    previewContainer.appendChild(preview)
 }
 
 function loadGadgets(numImages = 20) {

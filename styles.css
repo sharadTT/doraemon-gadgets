@@ -4,7 +4,7 @@ textarea {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
-.inputBoxes{
+.inputBoxes {
     display: flex;
     flex-direction: column;
     margin: 1em;
@@ -13,10 +13,10 @@ textarea {
     align-items: center;
 }
 
-.searchBar{
+.searchBar {
     width: 100%;
     max-width: 700px;
-    background: rgb(81,161,196, 0.2);
+    background: rgb(81, 161, 196, 0.2);
     display: flex;
     align-items: center;
     border-radius: 50px;
@@ -33,12 +33,12 @@ textarea {
     color: white;
 }
 
-.searchBar button img{
+.searchBar button img {
     width: 2rem;
     height: 2rem;
 }
 
-.searchBar button{
+.searchBar button {
     border: 0;
     border-radius: 50%;
     cursor: pointer;
@@ -111,37 +111,48 @@ body {
 
 .gadgetPreview {
     z-index: 10;
-    background-color: rgb(255,255,255,1);
-    position: fixed;
+    background-color: rgb(255, 255, 255, 1);
+    position: absolute;
     border-radius: 20px;
     align-items: center;
     text-align: center;
+    width: 60%;
+    /* height: 60%; */
 }
 
-.gadgetPreview p{
+.gadgetPreview p {
     z-index: 10;
     margin: 2em;
 }
 
 .gadgetPreview button {
-    position : absolute;
-    top : 0.5em;
-    right : 0.5em;
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
     border: 0;
     border-radius: 50%;
     cursor: pointer;
     background: transparent;
 }
 
+.previewContainer {
+    display: none;
+    justify-content: center; 
+    align-items: center;
+    height: 80vh;
+    width: 99vw;
+}
+
 #overlay {
     position: fixed;
     top: 0;
     left: 0;
+    bottom: 0;
+    right: 0;
     width: 100%;
     height: 100%;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.2);
     pointer-events: none;
     display: none;
-  }
-  
+}
