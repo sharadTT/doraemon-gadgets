@@ -62,6 +62,7 @@ function loadGadgetInfo(index) {
     img.style.height = "15em"
     img.style.width = "15em"
     img.style.margin = "0"
+    img.style.marginTop = "2em"
 
     //Add button to close
     const close = document.createElement('button')    
