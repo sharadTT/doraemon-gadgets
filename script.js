@@ -3,7 +3,7 @@ const previewContainer = document.querySelector('.previewContainer')
 const imageURL = 'https://raw.githubusercontent.com/sharadTT/doraemon-gadgets/main/images/gadget-images/'
 const gadgetNameURL = 'https://raw.githubusercontent.com/sharadTT/doraemon-gadgets/main/files/'
 let gadgetNumber = 1
-let maxGadgetNumber = 80
+let maxGadgetNumber = 226
 
 function loadGadgetInfo(index) {
 
@@ -60,7 +60,7 @@ function loadGadgetInfo(index) {
 
     preview.appendChild(img)
     img.style.height = "15em"
-    img.style.width = "15em"
+    // img.style.width = "15em"
     img.style.margin = "0"
     img.style.marginTop = "2em"
 
@@ -110,7 +110,7 @@ function loadGadgets(numImages = 20) {
                 card.appendChild(textElement) // append the <p> element to the container
 
                 img.style.height = "10em"
-                img.style.width = "10em"
+                // img.style.width = "10em"
                 img.style.margin = "0"
                 img.style.marginTop = "2em"
 
