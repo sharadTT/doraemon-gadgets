@@ -35,11 +35,6 @@ inputField.addEventListener("input", function () {
         return lowerCaseSuggestion.includes(inputValue);
     });
 
-    while (suggestionList.firstChild) {
-        suggestionList.removeChild(suggestionList.firstChild);
-        // container.removeChild(gadgetVisibility)
-    }
-
     while (container.firstChild) {
         container.removeChild(container.firstChild);
       }
@@ -62,6 +57,9 @@ inputField.addEventListener("input", function () {
         })
     }
     else {
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
         loadGadgets(20, 1)
     }
 });
