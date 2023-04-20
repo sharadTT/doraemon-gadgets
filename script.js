@@ -232,9 +232,11 @@ window.addEventListener('scroll', () => {
     }
 })
 
+function myFunction() {
+    var loader = document.querySelector(".preloader")
+    loader.classList.add("preloader--hidden")
+}
 
-var loader = document.getElementById("preloader")
 window.addEventListener("load", function () {
-    setTimeout(5000)
-    loader.style.display = "none"
+    setTimeout(myFunction, 1000);
 })
