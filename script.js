@@ -238,5 +238,5 @@ function myFunction() {
 }
 
 window.addEventListener("load", function () {
-    setTimeout(myFunction, 1000);
+    setTimeout(myFunction, 500);
 })
