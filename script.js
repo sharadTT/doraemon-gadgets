@@ -109,7 +109,7 @@ function loadGadgetInfo(index) {
             preview.appendChild(textElement) // append the <p> element to the container
 
             // apply CSS styles to the <p> elements
-            textElement.style.fontSize = '1.2rem'
+            textElement.style.fontSize = '1rem'
             textElement.style.color = 'black'
             textElement.style.display = "inherit"
 

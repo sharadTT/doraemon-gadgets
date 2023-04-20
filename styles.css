@@ -115,12 +115,6 @@ body {
     max-width: 25%;
 }
 
-@media (max-width: 768px) {
-    .gadgetCard {
-        max-width: 50%;
-    }
-}
-
 .gadgetCard Img:hover {
     cursor: pointer;
     transform: translate(0px, -8px);
@@ -140,7 +134,16 @@ body {
 
 .gadgetPreview p {
     z-index: 10;
-    margin: 2em;
+    margin: 1em 1em;
+}
+
+@media (max-width: 768px) {
+    .gadgetCard {
+        max-width: 50%;
+    }
+    .gadgetPreview {
+        margin-bottom: 10em;
+    }
 }
 
 .gadgetPreview button {
