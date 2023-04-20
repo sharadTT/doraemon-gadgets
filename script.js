@@ -162,5 +162,6 @@ window.addEventListener('scroll', () => {
 
 var loader = document.getElementById("preloader")
 window.addEventListener("load", function(){
+    setTimeout(3000)
     loader.style.display = "none"
 })
