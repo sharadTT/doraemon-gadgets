@@ -4,16 +4,76 @@ const imageURL = 'https://raw.githubusercontent.com/sharadTT/doraemon-gadgets/ma
 const gadgetNameURL = 'https://raw.githubusercontent.com/sharadTT/doraemon-gadgets/main/files/'
 let gadgetNumber = 1
 let maxGadgetNumber = 226
+let myArray = []
+let scrollFlag = false
+
+//Search functionality
+function getGadgetNames() {
+    for (let i = 0; i < maxGadgetNumber; i++) {
+        const fileName = `${gadgetNameURL}${i + 1}.txt`
+        fetch(fileName)
+            .then(response => response.text())
+            .then(data => {
+                myArray[i] = data // Assign data to second column
+                // console.log(myArray[i]) // Print index and data
+            })
+            .catch(error => console.error(error));
+    }
+}
+
+getGadgetNames()
+
+
+const suggestions = myArray;
+const inputField = document.getElementById("search-input");
+const suggestionList = document.getElementById("suggestion-list");
+
+inputField.addEventListener("input", function () {
+    const inputValue = inputField.value.toLowerCase();
+    const matchingSuggestions = suggestions.filter(function (suggestion) {
+        const lowerCaseSuggestion = suggestion.toLowerCase();
+        return lowerCaseSuggestion.includes(inputValue);
+    });
+
+    while (suggestionList.firstChild) {
+        suggestionList.removeChild(suggestionList.firstChild);
+        // container.removeChild(gadgetVisibility)
+    }
+
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+      }
+
+    if (inputValue.length > 0) {
+        const matchingSuggestions = suggestions
+          .map(function(suggestion, index) {
+            const lowerCaseSuggestion = suggestion.toLowerCase();
+            return lowerCaseSuggestion.includes(inputValue) ? index : null;
+          })
+          .filter(function(index) {
+            return index !== null;
+          });
+    
+        //console.log("Matching indices:", matchingSuggestions);
+
+        matchingSuggestions.forEach(function (suggestion) {
+            loadSingleGadget(suggestion+1)
+            scrollFlag = false
+        })
+    }
+    else {
+        loadGadgets(20, 1)
+    }
+});
 
 function loadGadgetInfo(index) {
-
     var overlay = document.getElementById('overlay');
     overlay.style.display = 'block';
     overlay.style.zIndex = 5;
     container.style.pointerEvents = 'none'
     previewContainer.style.display = 'flex'
 
-    console.log(`Image ${index} clicked`)
+    //console.log(`Image ${index} clicked`)
     const preview = document.createElement('div')
     preview.classList.add('gadgetPreview')
 
@@ -65,7 +125,7 @@ function loadGadgetInfo(index) {
     img.style.marginTop = "2em"
 
     //Add button to close
-    const close = document.createElement('button')    
+    const close = document.createElement('button')
     var closeImage = document.createElement('img');
     closeImage.src = 'images/close.png'
     closeImage.style.height = "2em"
@@ -81,25 +141,24 @@ function loadGadgetInfo(index) {
     previewContainer.appendChild(preview)
 }
 
-function loadGadgets(numImages = 8) {
-    let i = 0;
-    while (i < numImages) {
+function loadSingleGadget(index) {
+    // console.log('Loading gadget: ', index)
         const card = document.createElement('div')
         card.classList.add('gadgetCard')
         const img = document.createElement('img')
-        img.src = `${imageURL}${gadgetNumber}.png`
+        img.src = `${imageURL}${index}.png`
 
         // Create a closure using an IIFE to capture the current value of i
-        const onClickHandler = (function(gadgetNumber) {
+        const onClickHandler = (function (index) {
             return function () {
-                loadGadgetInfo(gadgetNumber)
+                loadGadgetInfo(index)
             }
-        })(gadgetNumber)
+        })(index)
 
         // Add click event listener to the img element
         img.addEventListener('click', onClickHandler)
 
-        const fileName = `${gadgetNameURL}${gadgetNumber}.txt`
+        const fileName = `${gadgetNameURL}${index}.txt`
         fetch(fileName)
             .then(response => response.text())
             .then(data => {
@@ -123,22 +182,38 @@ function loadGadgets(numImages = 8) {
 
             })
             .catch(error => console.error(error));
+    }
+
+function loadGadgets(numImages = 8, startIndex) {
+    scrollFlag = true
+    let i = 0;
+    gadgetNumber = startIndex
+    while (i < numImages) {
+
+        loadSingleGadget(gadgetNumber)
 
         i++
         gadgetNumber++
     }
 }
 
-loadGadgets(20)
+loadGadgets(4,1)
 
+magicScroll()
 
-window.addEventListener('scroll', () => {
-    if (gadgetNumber <= maxGadgetNumber) {
-    if (window.scrollY + window.innerHeight + 500 >= document.documentElement.scrollHeight) {
-        loadGadgets(2)
-    }
+function magicScroll() {
+    console.log(scrollFlag)
+
+    window.addEventListener('scroll', () => {
+        if (scrollFlag) {
+            if (gadgetNumber <= maxGadgetNumber) {
+                if (window.scrollY + window.innerHeight + 500 >= document.documentElement.scrollHeight) {
+                    loadGadgets(2, gadgetNumber)
+                }
+            }
+        }
+    })
 }
-})
 
 //Button to scroll to top
 function scrollToTop() {
@@ -161,7 +236,7 @@ window.addEventListener('scroll', () => {
 
 
 var loader = document.getElementById("preloader")
-window.addEventListener("load", function(){
-    setTimeout(3000)
+window.addEventListener("load", function () {
+    setTimeout(5000)
     loader.style.display = "none"
 })

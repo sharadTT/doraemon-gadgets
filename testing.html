@@ -1,89 +1,70 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>
-    Doraemon's Gadgets
-  </title>
+  <title>Autofill Example</title>
+  <style>
+    #suggestion-container {
+      position: relative;
+    }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+    #suggestion-list {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      z-index: 1;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-  <link rel="stylesheet" href="styles/style.css">
+    #suggestion-list li {
+      padding: 0.5em;
+      cursor: pointer;
+    }
+
+    #suggestion-list li:hover {
+      background-color: #f2f2f2;
+    }
+  </style>
 </head>
-
-<body class="scrollable">
-  <button class="topScrollButton" onclick="scrollToTop()">
-    <img src="images/ScrollToTop.png" alt="Top"></button>
-
-  <div class="gadgetsContainer">
+<body>
+  <div id="suggestion-container">
+    <input id="search-input" type="text" placeholder="Search...">
+    <ul id="suggestion-list"></ul>
   </div>
 
   <script>
-    const container = document.querySelector('.gadgetsContainer')
-    const imageURL = 'https://raw.githubusercontent.com/sharadTT/doraemon-gadgets/main/images/gadget-images/'
-    const gadgetNameURL = 'https://raw.githubusercontent.com/sharadTT/doraemon-gadgets/main/files/'
-    let gadgetNumber = 1
+    const suggestions = [
+  "apple",
+  "banana",
+  "orange",
+  "pineapple",
+  "strawberry",
+  "watermelon"
+];
 
-    function loadGadgets(numImages = 10) {
-      let i = 0;
-      while (i < numImages) {
-        const card = document.createElement('div')
-        card.classList.add('gadgetCard')
-        const img = document.createElement('img')
-        img.src = `${imageURL}${gadgetNumber}.png`
+const inputField = document.getElementById("search-input");
 
-        const fileName = `${gadgetNameURL}${gadgetNumber}.txt`
-        fetch(fileName)
-          .then(response => response.text())
-          .then(data => {
-            const textNode = document.createTextNode(data)
-            const textElement = document.createElement('p') // create a new <p> element
-            textElement.appendChild(textNode) // append the text node to the <p> element
-            card.appendChild(img)
-            card.appendChild(textElement) // append the <p> element to the container
+inputField.addEventListener("input", function() {
+  const inputValue = inputField.value.toLowerCase();
 
-            img.style.height = "10em"
-            img.style.width = "10em"
-            img.style.margin = "0"
-
-            // apply CSS styles to the <p> elements
-            textElement.style.fontSize = '1.2rem'
-            textElement.style.color = 'white'
-            textElement.style.display = "inline"
-
-            container.appendChild(card)
-
-          })
-          .catch(error => console.error(error));
-
-        i++
-        // gadgetNumber++
-      }
-    }
-
-    loadGadgets()
-
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
-        loadGadgets()
-      }
-    })
-
-
-
-    //Button to scroll to top
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+  if (inputValue.length >= 0) {
+    const matchingSuggestions = suggestions
+      .map(function(suggestion, index) {
+        const lowerCaseSuggestion = suggestion.toLowerCase();
+        return lowerCaseSuggestion.includes(inputValue) ? index : null;
+      })
+      .filter(function(index) {
+        return index !== null;
       });
-    }
+
+    console.log("Matching indices:", matchingSuggestions);
+  }
+});
+
   </script>
 </body>
-
 </html>

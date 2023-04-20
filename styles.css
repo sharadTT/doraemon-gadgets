@@ -11,6 +11,7 @@ textarea {
     padding: 1em;
     width: inherit;
     align-items: center;
+    z-index: 4;
 }
 
 .searchBar {
@@ -34,16 +35,9 @@ textarea {
     color: black;
 }
 
-.searchBar button img {
+.searchBar img {
     /* width: 2rem; */
     height: 3.5rem;
-}
-
-.searchBar button {
-    border: 0;
-    border-radius: 50%;
-    cursor: pointer;
-    background: transparent;
 }
 
 body {
@@ -122,7 +116,7 @@ body {
 }
 
 .gadgetPreview {
-    z-index: 10;
+    z-index: 1000;
     background-color: rgb(255, 255, 255, 1);
     position: fixed;
     border-radius: 20px;
@@ -149,7 +143,7 @@ body {
 
 .previewContainer {
     display: none;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     height: 80vh;
     width: 99vw;
@@ -167,4 +161,38 @@ body {
     background-color: rgba(0, 0, 0, 0.2);
     pointer-events: none;
     display: none;
+}
+
+#suggestion-container {
+    position: fixed;
+}
+
+ul {
+    position: relative;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    /* border: 1px solid gray; */
+    background-color: inherit;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: none;
+    z-index: 3;
+}
+
+ul.visible {
+    display: block;
+}
+
+li {
+    position: relative;
+    z-index: 1000;
+    padding: 0.5em 2em;
+    cursor: pointer;
+    background: rgb(81, 161, 196, 0.2)
+}
+
+li:hover {
+    background-color: #f1f1f1;
 }

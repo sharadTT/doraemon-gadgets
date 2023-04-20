@@ -19,14 +19,14 @@
 <body class="scrollable">
 
   <div id="preloader"></div>
-
   <div id="overlay"></div>
 
   <div class="inputBoxes">
-    <form action="" class="searchBar">
-      <input type="text" placeholder="Search your gadget">
-      <button type="submit"><img src="images/search.png"></button>
-    </form>
+    <div class="searchBar">
+      <input type="text" placeholder="Search your gadget" id="search-input">
+      <img src="images/search.png">
+    </div>
+    <ul id="suggestion-list"></ul>
   </div>
 
   <button class="topScrollButton" onclick="scrollToTop()">
