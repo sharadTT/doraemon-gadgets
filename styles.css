@@ -31,7 +31,7 @@ textarea {
     outline: none;
     padding: 1rem 1rem;
     font-size: 1rem;
-    color: white;
+    color: black;
 }
 
 .searchBar button img {
@@ -51,6 +51,14 @@ body {
     height: 100vh;
     margin: 0rem;
     overflow: hidden;
+}
+
+#preloader {
+    background: #51a1c4 url(images/loader.gif) no-repeat center center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
 }
 
 .scrollable {
