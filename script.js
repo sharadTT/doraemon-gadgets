@@ -197,7 +197,7 @@ function loadGadgets(numImages = 8, startIndex) {
     }
 }
 
-loadGadgets(4,1)
+loadGadgets(20,1)
 
 magicScroll()
 
