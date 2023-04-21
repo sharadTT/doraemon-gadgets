@@ -84,7 +84,8 @@ function loadGadgetInfo(index) {
     fetch(fileName)
         .then(response => response.text())
         .then(data => {
-            const textNode = document.createTextNode(data)
+            cleanData = data.replace(/[^a-zA-Z0-9\s]/g, " ")
+            const textNode = document.createTextNode(cleanData)
             const textElement = document.createElement('p') // create a new <p> element
             textElement.appendChild(textNode) // append the text node to the <p> element
             preview.appendChild(textElement) // append the <p> element to the container
@@ -103,7 +104,8 @@ function loadGadgetInfo(index) {
     fetch(fileInfo)
         .then(response => response.text())
         .then(data => {
-            const textNode = document.createTextNode(data)
+            cleanData = data.replace(/[^a-zA-Z0-9\s]/g, " ")
+            const textNode = document.createTextNode(cleanData)
             const textElement = document.createElement('p') // create a new <p> element
             textElement.appendChild(textNode) // append the text node to the <p> element
             preview.appendChild(textElement) // append the <p> element to the container
@@ -155,7 +157,8 @@ function loadSingleGadget(index) {
         fetch(fileName)
             .then(response => response.text())
             .then(data => {
-                const textNode = document.createTextNode(data)
+                cleanData = data.replace(/[^a-zA-Z0-9\s]/g, " ")
+                const textNode = document.createTextNode(cleanData)
                 const textElement = document.createElement('p') // create a new <p> element
                 textElement.appendChild(textNode) // append the text node to the <p> element
                 
