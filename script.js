@@ -84,7 +84,7 @@ function loadGadgetInfo(index) {
     fetch(fileName)
         .then(response => response.text())
         .then(data => {
-            cleanData = data.replace(/[^a-zA-Z0-9\s]/g, " ")
+            cleanData = data.replace(/[^a-zA-Z0-9\s\u0021-\u002F\u003A-\u0040\u005B-\u0060\u007B-\u007E]/g, " ")
             const textNode = document.createTextNode(cleanData)
             const textElement = document.createElement('p') // create a new <p> element
             textElement.appendChild(textNode) // append the text node to the <p> element
@@ -104,7 +104,7 @@ function loadGadgetInfo(index) {
     fetch(fileInfo)
         .then(response => response.text())
         .then(data => {
-            cleanData = data.replace(/[^a-zA-Z0-9\s]/g, " ")
+            cleanData = data.replace(/[^a-zA-Z0-9\s\u0021-\u002F\u003A-\u0040\u005B-\u0060\u007B-\u007E]/g, " ")
             const textNode = document.createTextNode(cleanData)
             const textElement = document.createElement('p') // create a new <p> element
             textElement.appendChild(textNode) // append the text node to the <p> element
@@ -157,7 +157,7 @@ function loadSingleGadget(index) {
         fetch(fileName)
             .then(response => response.text())
             .then(data => {
-                cleanData = data.replace(/[^a-zA-Z0-9\s]/g, " ")
+                cleanData = data.replace(/[^a-zA-Z0-9\s\u0021-\u002F\u003A-\u0040\u005B-\u0060\u007B-\u007E]/g, " ")
                 const textNode = document.createTextNode(cleanData)
                 const textElement = document.createElement('p') // create a new <p> element
                 textElement.appendChild(textNode) // append the text node to the <p> element
