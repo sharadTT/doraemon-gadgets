@@ -18,7 +18,7 @@ textarea {
     width: 100%;
     max-width: 700px;
     min-width: 300px;
-    background: #e8eaea;
+    background: white;
     /* rgb(81, 161, 196, 0.2); */
     display: flex;
     align-items: center;
