@@ -35,7 +35,7 @@ inputField.addEventListener("input", function () {
         return lowerCaseSuggestion.includes(inputValue);
     });
 
-    while (container.firstChild) {
+    while(container.firstChild) {
         container.removeChild(container.firstChild);
       }
 
@@ -117,16 +117,11 @@ function loadGadgetInfo(index) {
         .catch(error => console.error(error));
 
     preview.appendChild(img)
-    // img.style.height = "15em"
-    img.style.width = "15em"
-    img.style.margin = "0"
-    img.style.marginTop = "2em"
 
     //Add button to close
     const close = document.createElement('button')
     var closeImage = document.createElement('img');
     closeImage.src = 'images/close.png'
-    closeImage.style.height = "2em"
     close.appendChild(closeImage);
 
     close.addEventListener('click', function () {
@@ -163,18 +158,9 @@ function loadSingleGadget(index) {
                 const textNode = document.createTextNode(data)
                 const textElement = document.createElement('p') // create a new <p> element
                 textElement.appendChild(textNode) // append the text node to the <p> element
-                card.appendChild(img)
+                
                 card.appendChild(textElement) // append the <p> element to the container
-
-                // img.style.height = "10em"
-                img.style.width = "10em"
-                img.style.margin = "0"
-                img.style.marginTop = "2em"
-
-                // apply CSS styles to the <p> elements
-                textElement.style.fontSize = '1.2rem'
-                textElement.style.color = 'black'
-                textElement.style.display = "inline"
+                card.appendChild(img)
 
                 container.appendChild(card)
 
