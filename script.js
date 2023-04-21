@@ -149,7 +149,7 @@ function loadSingleGadget(index) {
         })(index)
 
         // Add click event listener to the img element
-        img.addEventListener('click', onClickHandler)
+        card.addEventListener('click', onClickHandler)
 
         const fileName = `${gadgetNameURL}${index}.txt`
         fetch(fileName)

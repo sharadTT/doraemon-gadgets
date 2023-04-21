@@ -18,7 +18,8 @@ textarea {
     width: 100%;
     max-width: 700px;
     min-width: 300px;
-    background: rgb(81, 161, 196, 0.2);
+    background: #e8eaea;
+    /* rgb(81, 161, 196, 0.2); */
     display: flex;
     align-items: center;
     border-radius: 50px;
@@ -41,7 +42,7 @@ textarea {
 }
 
 body {
-    background-color: white;
+    background-color: #51a1c4;
     height: 100vh;
     margin: 0rem;
     overflow: hidden;
@@ -105,7 +106,7 @@ body {
 .gadgetCard {
     display: flex;
     flex-direction: column-reverse;
-    color: white;
+    background-color: white;
     text-align: center;
     align-items: center;
     flex: 1 1 20%;
@@ -129,8 +130,11 @@ body {
     object-fit:contain;
 }
 
-.gadgetCard Img:hover {
+.gadgetCard:hover {
     cursor: pointer;
+}
+
+.gadgetCard:hover Img{
     transform: translate(0px, -8px);
     transition: 0.8s all ease;
 }
